@@ -1,0 +1,28 @@
+// Variables
+
+// Fuentes
+$fuente_principal: 'Raleway';
+$fuente_secundaria: 'Roboto';
+// $fuente_terciaria: 'Lato', sans-serif;
+
+// Colores
+$principal: #33c3f0;
+$principal_degradado: rgba(51, 196, 240, 0.6);
+$secundario: #741d51;
+$secundario_degradado: rgba(116, 29, 81, 0.8);
+$terciario: #dc143c;
+$terciario_degradado: rgba(220, 20, 60, 0.8);
+$gris: #f2f2f2;
+$blanco: #fff;
+$negro: #000000;
+$green: #008000;
+
+// Variables para los tamaños de Media Queries
+
+$telefono: 480px;
+$tablet: 768px;
+// Para la Tablet Asus Memo Pad 7 Lite
+// $tablet: 602px;
+// $tablet: 601px;
+$desktop: 1024px;
+

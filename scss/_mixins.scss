@@ -1,0 +1,101 @@
+// # Botones
+@mixin boton($color){
+    background-color: $color;
+    padding: .8rem 1rem;
+    display: block;
+    margin-top: 1rem;
+    color: $blanco;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-color: transparent;
+    text-transform: uppercase;
+    // outline: 0px;
+    // font-size: 3rem;
+    
+}
+
+@mixin box-sizing($box-model) {
+    box-sizing: $box-model;
+}
+
+
+@mixin  background-image($imagen) {
+    background-image: url($imagen);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@mixin gradiente($color1, $color2) {
+    // Que empiece desde la derecha,
+    // El color 1 va a empezar desde el 0%,
+    // El color 2 va a llegar hasta el 100%,
+
+    background: linear-gradient(to right, $color1 0%, $color2 100%);
+}
+
+
+@mixin gradiente-letras($color1, $color2) {
+
+    background: -webkit-linear-gradient($color1,$color2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #000;
+}
+
+/* Media queries */
+@mixin telefono {
+    // La variable $telefono se inyectará automáticamente
+    @media only screen and (min-width: #{$telefono}){
+        // Se agrega @content para que el método tenga almenos
+        // algo de contenido y se pueda representar la información
+        @content;
+    }
+}
+@mixin tablet {
+    // La variable $tablet se inyectará automáticamente
+    @media only screen and (min-width: #{$tablet}){
+        // También funciona así
+        // @media only screen and (min-width: $tablet){
+        // Se agrega @content para que el método tenga almenos
+        // algo de contenido y se pueda representar la información
+        @content;
+        
+    }
+}
+@mixin desktop {
+    // La variable $desktop se inyectará automáticamente
+    @media only screen and (min-width: #{$desktop}){
+        // Se agrega @content para que el método tenga almenos
+        // algo de contenido y se pueda representar la infromación
+        @content;
+
+    }
+}
+
+// Menus de navegación
+@mixin menus() {
+    
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    flex: 1;
+
+    @include desktop(){
+        flex: 0 1 calc(30% - 1rem);
+    }
+
+    a {
+        color: $negro;
+        text-decoration: none;
+        margin-bottom: .5rem;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}

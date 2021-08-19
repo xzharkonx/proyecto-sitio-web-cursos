@@ -1,0 +1,608 @@
+@charset "UTF-8";
+/* Media queries */
+/* Default */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Raleway";
+  line-height: 1.6;
+  font-weight: 400;
+  color: #222;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+img {
+  max-width: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  padding: 20px 0 0 0;
+  background: white;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1;
+}
+
+/* Header */
+.contenedor {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.contenedor .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.contenedor .row .logo p {
+  background: -webkit-linear-gradient(#33c3f0, #dc143c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #000;
+  font-size: 1.2rem;
+  margin: 0px;
+}
+
+@media only screen and (min-width: 480px) {
+  .contenedor .row .logo p {
+    font-size: 1.5rem;
+  }
+}
+
+.contenedor .row .logo p::first-letter {
+  font-size: 2rem;
+  font-family: "Roboto";
+  text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.6);
+}
+
+@media only screen and (min-width: 480px) {
+  .contenedor .row .logo p::first-letter {
+    font-size: 3rem;
+  }
+}
+
+.contenedor ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Cart */
+.submenu {
+  position: relative;
+  font-family: "Roboto";
+}
+
+.submenu img {
+  margin: 0 0 8px 0;
+  width: 80%;
+}
+
+@media only screen and (min-width: 480px) {
+  .submenu img {
+    width: 100%;
+  }
+}
+
+.submenu #carrito {
+  display: none;
+}
+
+.submenu:hover #carrito {
+  display: block;
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+  /* Estás propiedades son para que la lista del
+    carrito de compras fuera scrollable */
+  /* overflow: scroll; */
+  /* overflow-x: scroll; */
+  overflow-y: scroll;
+  /*min-height: 400px;*/
+  max-height: 400px;
+  max-width: 440px;
+  min-width: 200px;
+  padding: 8px;
+  right: 0;
+  top: 100%;
+  font-size: .6rem;
+  border-bottom: 2px solid #333;
+  border-right: 2px solid #333;
+}
+
+@media only screen and (min-width: 480px) {
+  .submenu:hover #carrito {
+    max-height: 550px;
+    padding: 16px;
+    right: 0;
+    top: 100%;
+    font-size: .8rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .submenu:hover #carrito {
+    max-width: 640px;
+    min-width: 300px;
+    padding: 20px;
+    right: 0;
+    top: 100%;
+    font-size: 1rem;
+  }
+}
+
+.carrito .tabla {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.carrito .tabla th, .carrito .tabla td {
+  padding: 4px 8px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1;
+}
+
+.carrito .tabla tbody tr td img {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  width: 60px;
+}
+
+@media only screen and (min-width: 480px) {
+  .carrito .tabla tbody tr td img {
+    width: 80px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .carrito .tabla tbody tr td img {
+    width: 100px;
+  }
+}
+
+.carrito a {
+  display: inline-block;
+  width: 100%;
+  height: 38px;
+  padding: 0 16px;
+  color: #fff;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: #dc143c;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 480px) {
+  .carrito a {
+    padding: 0 30px;
+  }
+}
+
+/* Hero */
+.hero {
+  min-height: 24rem;
+  background-image: url("../img/hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.hero .contenido-hero {
+  padding-bottom: 10px;
+  /* Formulario principal */
+}
+
+.hero .contenido-hero h2 {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 2.4rem;
+}
+
+.hero .contenido-hero p {
+  font-size: 1.2rem;
+  font-family: "Roboto";
+}
+
+.hero .contenido-hero form {
+  position: relative;
+  /* Tomará el 100% si no le ponemos nada a tamaño
+                de celular. */
+  /* width: 40%; */
+  /* Utilizamos un mixin */
+  /* Aquí le estamos diciendo que tomará
+            el tamaño de 40% en el tamaño de la tableta */
+}
+
+@media only screen and (min-width: 768px) {
+  .hero .contenido-hero form {
+    /* Aquí agregamos lo que vamos a modificar en ese mediaQuerie */
+    width: 40%;
+  }
+}
+
+.hero .contenido-hero form input[type="submit"] {
+  /* Ajustamos la posición del botón */
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  background-image: url("../img/lupa.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 3rem;
+  height: 4rem;
+  /* A partir de aquí desapareceremos el botón para que
+                solo se murestre la lupa de icono */
+  display: block;
+  text-indent: -9999px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  /* Por si queremos quitarle el borde que se
+                le pone al seleccionarlo */
+  outline: 0;
+  border-radius: 0 5px 5px 0;
+  -webkit-border-radius: 0 5px 5px 0;
+  -moz-border-radius: 0 5px 5px 0;
+  -ms-border-radius: 0 5px 5px 0;
+  -o-border-radius: 0 5px 5px 0;
+}
+
+.hero .contenido-hero form input[type="text"] {
+  width: 100%;
+  height: 4.3rem;
+  padding-left: 2rem;
+  outline: 0;
+  border-color: transparent;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.barra {
+  min-height: 6rem;
+  padding: 1rem;
+  background: linear-gradient(to right, #33c3f0 0%, #dc143c 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (min-width: 480px) {
+  .barra {
+    padding: 10rem 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .barra {
+    padding: 1rem;
+  }
+}
+
+.barra .iconos {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: center;
+  /* text-align: justify; */
+  /* Con está línea ya se acomodarán los iconos
+        porque crecen en 1 fracción. */
+  flex: 1;
+}
+
+.barra .iconos p {
+  margin-left: 20%;
+}
+
+@media only screen and (min-width: 480px) {
+  .barra .iconos {
+    align-items: center;
+    text-align: center;
+    /* Espaciado para el primer parrafo */
+    /* & .icono:nth-child(1) p {margin: 0;}*/
+  }
+  .barra .iconos p {
+    margin-left: 0%;
+    clear: both;
+    margin-bottom: 9rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .barra .iconos {
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+    /* justify-content: space-around; */
+  }
+  .barra .iconos p {
+    margin-left: 15%;
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .barra .iconos {
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+    /* justify-content: space-around; */
+  }
+  .barra .iconos p {
+    margin-left: 0%;
+  }
+}
+
+.barra .iconos .icono {
+  /* Para que crescan y tomen el mismo espacio cada uno
+            de ellos */
+  flex: 1;
+  /* Posicionamos el icono */
+  background-position: 5% center !important;
+  /* Tamaño del icono ¨*/
+  background-size: 2.4rem;
+  /* Incluimos los iconos */
+}
+
+@media only screen and (min-width: 480px) {
+  .barra .iconos .icono {
+    background-position: center center !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .barra .iconos .icono {
+    background-position: 0% center !important;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .barra .iconos .icono {
+    background-position: left center !important;
+  }
+}
+
+.barra .iconos .icono.icono1 {
+  background-image: url("../img/icono1.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.barra .iconos .icono.icono2 {
+  background-image: url("../img/icono2.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.barra .iconos .icono.icono3 {
+  background-image: url("../img/icono3.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.cursos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cursos .curso {
+  /* La función darken (el color y el porcentaje)
+        para que el color se oscuresca */
+  border: 1px solid #d9d9d9;
+  margin-bottom: 1rem;
+  flex: 0 1 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.cursos .curso .imagen-curso {
+  flex: 3;
+  width: 100%;
+}
+
+@media only screen and (min-width: 480px) {
+  .cursos .curso {
+    flex: 0 1 calc(50% - 1rem);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .cursos .curso {
+    flex: 0 1 calc(33% - 1rem);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .cursos .curso {
+    flex: 0 1 calc(25% - 1rem);
+  }
+}
+
+.info-curso {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.info-curso h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.info-curso img {
+  width: 50%;
+}
+
+.info-curso .precio {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Roboto";
+  align-items: center;
+}
+
+.info-curso .precio .regular {
+  text-decoration: line-through;
+  color: #dc143c;
+}
+
+.info-curso .precio .oferta {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #008000;
+}
+
+.info-curso .boton {
+  background-color: #33c3f0;
+  padding: .8rem 1rem;
+  display: block;
+  margin-top: 1rem;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-color: transparent;
+  text-transform: uppercase;
+}
+
+.footer {
+  /* La función darken (el color y el porcentaje)
+        para que el color se oscuresca */
+  border-top: 1px solid #d9d9d9;
+  margin-top: 1rem;
+  padding-top: 2rem;
+}
+
+.footer .contenedor-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 480px) {
+  .footer .contenedor-footer {
+    flex-direction: row;
+  }
+}
+
+.menu, .navegacion {
+  /* Importamos del mixin los estilos*/
+  /* Este ira de la mano con el mixin que hemos creado*/
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+@media only screen and (min-width: 1024px) {
+  .menu, .navegacion {
+    flex: 0 1 calc(30% - 1rem);
+  }
+}
+
+.menu a, .navegacion a {
+  color: #000000;
+  text-decoration: none;
+  margin-bottom: .5rem;
+}
+
+.menu a:hover, .navegacion a:hover {
+  text-decoration: underline;
+}
+
+.navegacion {
+  /*  Extendemos de los estilos de la clase .menu */
+  /*  Esta clase no se ocupa en el html pero de extiende
+        de aquí para ocupar sus estilos*/
+  /* Agregamos un estilo único para este menu a el
+    color de las letras */
+}
+
+.navegacion a {
+  color: #33c3f0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.mensaje {
+  padding: 8px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 300px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background: linear-gradient(to right, rgba(51, 196, 240, 0.6) 0%, rgba(220, 20, 60, 0.8) 100%);
+}
+
+.mensaje img {
+  float: left;
+  vertical-align: top;
+  margin-right: 8px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.mensaje p {
+  padding: 0px 0px;
+  margin: 0px;
+  color: #fff;
+}
