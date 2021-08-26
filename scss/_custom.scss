@@ -514,6 +514,14 @@ th, td {
                 flex-direction: row;
             }
         }
+
+        .info-footer {
+            border-top: 1px solid darken($gris, 10);
+            margin: 1rem 0;
+            padding-top: 2rem;
+            text-align: center;
+            
+        }
 }
 
 // Esta clase no esta en el HTML
